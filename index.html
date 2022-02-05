@@ -23,9 +23,12 @@
                 <div class="form">
                     <input type="search" id="busca" name="busca" class="input-search"
                         placeholder="What are you looking for?">
-                    <button class="btn-search show-mobile" type="submit"><img src="./assets/search.svg" alt=""></button>
-                    <button class="btn-search show-desktop" type="submit"><img src="./assets/search-orange.png"
-                            alt=""></button>
+                    <button class="btn-search show-mobile" type="submit">
+                        <img src="./assets/search.svg" alt="">
+                    </button>
+                    <button class="btn-search show-desktop" type="submit">
+                        <img src="./assets/search-orange.png" alt="">
+                    </button>
                 </div>
             </div>
             <!-- sign in, whishlist, cart -->
@@ -62,8 +65,12 @@
 
     <main>
         <div class="page-localization">
-            <p>Home > Eletronics > Computers</p>
+            <p>Home</p>
+            <p class="show-desktop">Home > Eletronics > </p>
+            <p class="show-desktop" style="color:#E36305"> Computers</p>
         </div>
+
+        <!-- SEÇÃO DETALHES DO PROD ESCOLHIDO -->
 
         <section class="container-product">
             <div class="product-detail">
@@ -75,8 +82,11 @@
                 </div>
                 <!-- img do produto -->
                 <div class="container-img-product">
-                    <img class="img-small" src="./assets/img/pc-mobile.png" alt="">
-                    <img class="img-large" src="./assets/img/pc-desktop.png" alt="">
+                    <div>
+                        <img class="img-small" src="./assets/img/pc-mobile.png" alt="">
+                        <img class="img-large" src="./assets/img/pc-desktop.png" alt="">
+                    </div>
+                    <p class="show-desktop">Roll over image to zoom in</p>
                 </div>
 
                 <!-- div com detalhes do produto-->
@@ -90,24 +100,30 @@
                             <span>read full description</span>
                         </div>
                     </div>
+
                     <div class="container-produt-detail">
                         <div class="container-left">
                             <!-- opçao de cores -->
-                            <span class="font-14">Color: </span>
-                            <span id="color-selected" class="font-14"></span>
                             <div class="container-colors">
-                                <input type="radio" name="color" id="space-gray" value="Space Gray"
-                                    onclick="colorSelected()">
-                                <input type="radio" name="color" id="rose-gold" value="Rose Gold"
-                                    onclick="colorSelected()">
-                                <input type="radio" name="color" id="silver" value="Silver" onclick="colorSelected()">
+                                <span>Color: </span>
+                                <span id="color-selected"></span>
+                                <div class="colors">
+                                    <input type="radio" name="color" id="space-gray" value="Space Gray"
+                                        onclick="colorSelected()">
+                                    <input type="radio" name="color" id="rose-gold" value="Rose Gold"
+                                        onclick="colorSelected()">
+                                    <input type="radio" name="color" id="silver" value="Silver"
+                                        onclick="colorSelected()">
+                                </div>
                             </div>
                             <!-- tamanho -->
-                            <span class="font-14">Screen Size:</span>
-                            <div class="container-screen-size">
-                                <div>13.3”</div>
-                                <div>18”</div>
-                                <div>21”</div>
+                            <div class="container-size">
+                                <span class="font-14">Screen Size:</span>
+                                <div class="container-screen-size">
+                                    <div>13.3”</div>
+                                    <div>18”</div>
+                                    <div class="selected">21”</div>
+                                </div>
                             </div>
                             <!-- shipping -->
                             <div class="container-shipping">
@@ -116,343 +132,486 @@
                                     <span class="font-14">Shipping</span>
                                     <p>Receive or pickup your products!</p>
                                     <p class="text-green">See shipping options</p>
-
                                 </div>
                             </div>
                         </div>
 
                         <div class="container-right">
+                            <!-- preço -->
                             <div class="product-price">
                                 <span id="price" class="font-24">$ 3,199.00</span>
                                 <div>
                                     <span class="font-14 price-old">$ 3,600.00</span>
-                                    <span><img src="./assets/save.svg" alt=""></span>
+                                    <img src="./assets/save.svg" alt="">
                                 </div>
                             </div>
-
+                            <!-- quantidade -->
                             <div class="product-quantity">
                                 <div class="quantity">
-                                    <button id="btn-minus" type="submit" onclick="subtrair()"><img
-                                            src="./assets/minus-signal.png" alt=""></button>
+                                    <button id="btn-minus" type="submit" onclick="subtrair()">
+                                        <img src="./assets/minus-signal.png" alt="">
+                                    </button>
                                     <span id="number">1</span>
-                                    <button id="btn-plus" type="submit" onclick="somar()"><img
-                                            src="./assets/plus-signal.png" alt=""></button>
+                                    <button id="btn-plus" type="submit" onclick="somar()">
+                                        <img src="./assets/plus-signal.png" alt="">
+                                    </button>
                                 </div>
                                 <div>
                                     <p style="color: #E63737;">Only 3 left in Stock</p>
                                     <p>Buy now!</p>
                                 </div>
                             </div>
-                            <button class="btn-green btn-cart font-btn-16" type="submit" onclick="addCart()">add to
-                                cart</button>
-                            <button class="btn-orange btn-cart font-btn-16" type="submit"> <img
-                                    src="./assets/bag-buttom.svg" alt=""> buy now</button>
-                            <p class="text-shipped">Shipped by Store 1 Sold by Store 2</p>
+                            <!-- botão add to cart -->
+                            <button class="btn-green btn-cart font-btn-16" type="submit">add to cart</button>
+                            <button class="btn-orange btn-cart font-btn-16" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="" onclick="addToCart()"> buy now
+                            </button>
+
+                            <span class="text-shipped">
+                                Shipped by
+                                <span style="font-weight: 600; font-size: 13px;">Store 1</span>
+                                Sold by
+                                <span style="font-weight: 600; font-size: 13px;">Store 2</span>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div></div>
-
         <div class="division-line"></div>
 
         <!-- CARROSSEL -->
+
         <section class="container-carousel">
             <h2 class="show-desktop">Customers also bought these products</h2>
             <h2 class="show-mobile">Customers also bought</h2>
+            <!-- primeiro carrossel -->
             <div class="first-carousel">
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/smart-tv.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/smart-tv.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">VIZIO 65" Class 4K UHD Quantum SmartCast Sma...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <div>
+                            <p class="price-old">$ 748.00</p>
+                            <p class="font-price">$ 548.00</p>
+                            <p class="parcela">10x $ 320,00</p>
+                        </div>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/relogio.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Apple Watch Series 5 GPS, 44mm Space Gray Alumi...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 449.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/faqueiro.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/faqueiro.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">The Pioneer Woman Cowboy Rustic 14-Piece...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <p class="price-old">$ 69.97</p>
+                        <p class="font-price">$ 59.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/wireless-charging.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">onn. Wireless Charging Pad with LED Night Light</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 12.88</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/cadeira.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Office Chair Ergonomic Desk Chair Mesh Comp...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 54.99</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/hershey.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Hershey, Halloween Assorted Candy Nuts...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 9.94</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/smartcast.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/smartcast.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">VIZIO 65" Class 4K UHD Quantum SmartCast Sma...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <p class="price-old">$ 748.00</p>
+                        <p class="font-price">$ 548.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/smartphone.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Apple Watch Series 5 GPS, 44mm Space Gray Alumi...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <!-- <p class="price-old">$ 3,600.00</p> -->
+                    <div class="container-price">
+                        <p class="font-price">$ 449.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/pionner.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/pionner.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">The Pioneer Woman Cowboy Rustic 14-Piece...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <p class="price-old">$ 69.97</p>
+                        <p class="font-price">$ 59.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/phones.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">onn. Wireless Charging Pad with LED Night Light</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <!-- <p class="price-old">$ 3,600.00</p> -->
+                    <div class="container-price">
+                        <p class="font-price">$ 12.88</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/snorkel.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Office Chair Ergonomic Desk Chair Mesh Comp...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 54.99</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/headphone.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Hershey, Halloween Assorted Candy Nuts...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 9.94</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <h2 class="show-desktop">Customers also viewed</h2>
+            <!-- segundo carrossel -->
+            <h2 class="show-desktop">Customers also viewed these products</h2>
             <h2 class="show-mobile">Customers also viewed</h2>
             <div class="second-carousel">
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/smartcast.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="container-price-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/smartcast.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">VIZIO 65" Class 4K UHD Quantum SmartCast Sma...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <p class="price-old">$ 748.00</p>
+                        <p class="font-price">$ 548.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/smartphone.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Apple Watch Series 5 GPS, 44mm Space Gray Alumi...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 449.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/pionner.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/pionner.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">The Pioneer Woman Cowboy Rustic 14-Piece...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <p class="price-old">$ 69.97</p>
+                        <p class="font-price">$ 59.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/phones.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">onn. Wireless Charging Pad with LED Night Light</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 12.88</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/snorkel.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Office Chair Ergonomic Desk Chair Mesh Comp...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 54.99</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/headphone.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Hershey, Halloween Assorted Candy Nuts...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <!-- <p class="price-old">$ 3,600.00</p> -->
+                    <div class="container-price">
+                        <p class="font-price">$ 9.94</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/smart-tv.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/smart-tv.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">VIZIO 65" Class 4K UHD Quantum SmartCast Sma...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <div>
+                            <p class="price-old">$ 748.00</p>
+                            <p class="font-price">$ 548.00</p>
+                            <p class="parcela">10x $ 320,00</p>
+                        </div>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/relogio.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Apple Watch Series 5 GPS, 44mm Space Gray Alumi...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 449.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
-                    <img class="corousel-img" src="./assets/produts/faqueiro.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <div class="product-discount">
+                        <div class="tags">
+                            <img src="./assets/discount.png" alt="">
+                            <img src="./assets/save.svg" alt="">
+                        </div>
+                        <img class="corousel-img" src="./assets/produts/faqueiro.png" alt="">
+                    </div>
+                    <h2 class="h2-discount show-desktop">The Pioneer Woman Cowboy Rustic 14-Piece...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price-discount">
+                        <p class="price-old">$ 69.97</p>
+                        <p class="font-price">$ 59.00</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/wireless-charging.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">onn. Wireless Charging Pad with LED Night Light</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 12.88</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/cadeira.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Office Chair Ergonomic Desk Chair Mesh Comp...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 54.99</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="corousel-img" src="./assets/produts/hershey.png" alt="">
-                    <h2>The name of the product in 2 lines...</h2>
-                    <p class="price-old">$ 3,600.00</p>
-                    <p class="font-16">$ 3,200.00</p>
-                    <p>10x $ 320,00</p>
-                    <div class="show-mobile">
-                        <button class="btn-green font-btn-12 btn-carousel" type="submit"><img
-                                src="./assets/bag-buttom.svg" alt="bag">
-                            add</button>
+                    <h2 class="show-desktop">Hershey, Halloween Assorted Candy Nuts...</h2>
+                    <h2 class="show-mobile">The name of the product in 2 lines...</h2>
+                    <div class="container-price">
+                        <p class="font-price">$ 9.94</p>
+                        <p class="parcela">10x $ 320,00</p>
+                        <div class="show-mobile">
+                            <button class="btn-green font-btn-12 btn-carousel" type="submit">
+                                <img src="./assets/bag-buttom.svg" alt="bag">add
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -460,6 +619,7 @@
         </section>
 
         <!-- FULL DESCRIPTION -->
+
         <section class="full-description">
             <div class="full-description-img banner-mobile"><img src="./assets/img/banner-mobile.png" alt=""></div>
             <div class="full-description-img banner-desktop"><img src="./assets/img/banner-desktop.png" alt=""></div>
@@ -470,8 +630,7 @@
                 </div>
                 <p>
                     <strong>We aim to show-mobile you accurate product information. Manufacturers, suppliers and others
-                        provide
-                        what you see here, and we have not verified it. See our disclaimer</strong>
+                        provide what you see here, and we have not verified it. See our disclaimer</strong>
                 </p>
                 <br />
                 <p>
@@ -494,16 +653,15 @@
                     <li>Lightning connector for charging and accessories </li>
                     <li>iOS 12 with Group FaceTime, shared augmented reality experiences, Screen Time, and more </li>
                 </ul>
-                <p class="show-desktop">Go to <a
-                        href="https://www.apple.com/ipad-air/specs/">apple.com/ipad-air/specs</a> for
+                <p class="show-desktop">Go to <a href="https://www.apple.com/ipad-air/specs/"
+                        target="_blank">apple.com/ipad-air/specs</a> for
                     a complete set. </p>
-            </div>
-            <br />
+            </div><br />
             <span class="font-14 show-mobile" style="color: rgb(80, 80, 180)"> Read more</span>
         </section>
 
-
         <!-- SUBSCRIBE NEWS-->
+
         <section class="container-news">
             <h2>Get news & special offers!</h2>
             <div class="container-email-button">
@@ -514,7 +672,6 @@
                 <button class="btn-submit btn btn-orange font-btn-14" type="submit">submit</button>
             </div>
         </section>
-
     </main>
 
     <!-- FOOTER-->
@@ -563,18 +720,20 @@
                 </div>
             </div>
             <div class="footer-btn">
-                <button class="btn-green btn font-btn-14" type="submit"><img src="./assets/phone.svg" alt=""> call
-                    us</button>
-                <button class="btn-orange btn font-btn-14" type="submit"><img src="./assets/mail.svg" alt=""> send a
-                    message</button>
-                <a href="#">Click here <span style="color: #9FA3A6;">to see our opening hours</span></a>
+                <button class="btn-green btn font-btn-14" type="submit"><img src="./assets/phone.svg" alt="">
+                    call us
+                </button>
+                <button class="btn-orange btn font-btn-14" type="submit"><img src="./assets/mail.svg" alt="">
+                    send a message
+                </button>
+                <a class="link" href="#">Click here <span style="color: #9FA3A6;">to see our opening hours</span></a>
             </div>
         </div>
-
         <div class="division"></div>
 
         <div class="footer-two">
             <div class="payments-midias-container">
+                <!-- payments -->
                 <div class="footer-payments">
                     <span><img src="./assets/payments/Mastercard.svg" alt=""></span>
                     <span><img src="./assets/payments/visa.svg" alt=""></span>
@@ -584,13 +743,14 @@
                     <span><img src="./assets/payments/googlepay.svg" alt=""></span>
                     <span><img src="./assets/payments/applepay.svg" alt=""></span>
                 </div>
-
+                <!-- midias -->
                 <div class="footer-midias">
                     <span><img src="./assets/facebook.svg" alt=""></span>
                     <span><img src="./assets/instagram.svg" alt=""></span>
                     <span><img src="./assets/twitter.svg" alt=""></span>
                 </div>
             </div>
+            <!-- rights -->
             <div>
                 <h3>2020 @ All Right Reserved to VTEX</h3><br>
                 <p>Amet minim mollit non deserunt ullamco est sit aliqua do amet sint. Velit officia consequat duis enim
@@ -598,6 +758,7 @@
                     ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
                     Exercitation veniam consequat sunt amet.</p>
             </div>
+            <!-- logos -->
             <div class="footer-logos">
                 <span><img src="./assets/vtex.svg" alt=""></span>
                 <span><img src="./assets/b8one.svg" alt=""></span>
