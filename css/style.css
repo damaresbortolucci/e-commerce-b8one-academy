@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
+
+/* MOBILE FIRST */
+
 * {
     margin: 0;
     padding: 0;
@@ -546,6 +549,7 @@ div.container-right{
     width: 100%;
 }
 
+
 .full-description-img img{
     width: 100%;
 }
@@ -823,6 +827,12 @@ footer a{
         text-transform: uppercase;
     }
 
+    .title-span{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5em;
+    }
+
     .title-span span:nth-child(2){
         text-transform: uppercase;
         color: #40B25C;
@@ -902,6 +912,12 @@ footer a{
         padding: 0 32px;
     }
 
+    .title-description h2{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
     .img-small{
         display: none;
     }
@@ -963,13 +979,7 @@ footer a{
         text-align: left;
     }
 
-    .title-span{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1.5em;
-    }
-
-    .img-small{
+     .img-small{
         display: block;
     }
     .img-large{
@@ -1011,11 +1021,7 @@ footer a{
        margin-top: 0;
     }
 
-    .title-description h2{
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 28px;
-    }
+  
 
     .product-quantity{
         margin: 24px 0 16px 0;
