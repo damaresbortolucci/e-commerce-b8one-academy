@@ -25,7 +25,6 @@ function mostrarNatela(){
 /* qtde e itens dentro do carrinho */
 function addCart(){
     quantidade_produtos.innerHTML = numero;
-    alert("Produto adicionado ao carrinho!");
 }
 
 

@@ -24,7 +24,7 @@ $('.first-carousel').slick({
       }
     },
     {
-      breakpoint: 901,
+      breakpoint: 900,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3
@@ -69,7 +69,7 @@ $('.second-carousel').slick({
       }
     },
     {
-      breakpoint: 901,
+      breakpoint: 900,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3
@@ -84,6 +84,12 @@ $('.second-carousel').slick({
     }
 
   ]
+});
+
+
+$('.full-description-img').slick({
+  dots: false,
+ 
 });
 
 

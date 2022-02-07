@@ -424,9 +424,8 @@ div.container-right{
 /* divisão da pagina */
 .division-line{
     display: none;
-    margin: auto;
+    margin: 0 32px;
     height: 1px;
-    width: 1376px;
     background: #E9E9E9;
 }
 
@@ -435,13 +434,14 @@ div.container-right{
 
 /* ============ CAROUSEL ===========*/
 
-.container-carousel{
+.container-carousel-one,
+.container-carousel-two{
     padding: 0 20px;
 }
 
 .carousel-item{
     margin: 8px;
-    
+
 }
 
 .carousel-item h2{
@@ -465,7 +465,7 @@ div.container-right{
     top: 5px;
 }
 
-.container-carousel h2{
+.title-carousel{
     font-weight: 600;
     font-size: 18px;
     margin: 12px 0 10px;
@@ -853,6 +853,12 @@ footer a{
         display: block;
     }
 
+    .container-carousel-one,
+    .container-carousel-two{
+        margin-top: 40px;
+    }
+ 
+
     .carousel-item h2{
         font-size: 14px;
         margin: 8px 0px;
@@ -898,6 +904,7 @@ footer a{
         justify-content: center;
         gap: 0 3em;
     }
+
   }
 
 
@@ -947,7 +954,6 @@ footer a{
 
 
   @media screen and (min-width: 1024px){
-
     .navbar ul{
         gap: 0 10px;
         font-size: 14px;
@@ -970,9 +976,18 @@ footer a{
         justify-content: space-between;
     }
 
+    .title-carousel{
+        font-size: 20px;
+    }
+
+    .carousel-item{
+        height: 360px;
+    }
+
     .container-description-product{
         flex-direction: column;
         margin-top: 2em;
+        width: 60%;
         
     }
     .title-description{
@@ -999,12 +1014,17 @@ footer a{
     .footer-logos{
         margin-bottom: 50px;
     }
+    .slick-dots{
+        display: none !important;
+    }
+  
   }
 
 
 
   @media screen and (min-width: 1200px){
-    .img-small{
+
+      .img-small{
         display: none;
     }
     .img-large{
@@ -1042,7 +1062,8 @@ footer a{
         margin: 4px 0;
     }
 
-    .container-carousel{
+    .container-carousel-one,
+    .container-carousel-two{
         padding: 0 32px;
         margin-top: 64px;
     }
@@ -1052,10 +1073,6 @@ footer a{
         margin: 8px;
     }
     
-    .container-carousel h2,
-    .container-carousel h2{
-        font-size: 20px;
-    }
 
     .carousel-item h2{
         font-size: 14px;
@@ -1084,6 +1101,11 @@ footer a{
     .footer-midias{
         margin: auto;
     }
+
+    .slick-dots{
+        display: none !important;
+    }
+  
   }
 
 
@@ -1141,14 +1163,6 @@ footer a{
         height: 112px;
     }
 
-    .division-line{
-        display: block;
-    }
-
-    .carousel-item{
-        height: 360px;
-    }
-
     .tags{
         display: block;
     }
@@ -1199,5 +1213,24 @@ footer a{
         font-weight: 600;
         font-size: 20px;
         line-height: 24px;
+    }
+
+    .division-line{
+        display: block;
+    }
+}
+
+
+@media screen and (min-width: 1600px){
+    .container-description-product{
+        width: 45%;
+        display: flex;
+        justify-content: center;
+    }
+    .product-detail .container-img-product{
+        margin: auto;
+    }
+    .container-produt-detail{
+        justify-content: space-between;
     }
 }
